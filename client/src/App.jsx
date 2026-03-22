@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const BACKEND_URL = "https://fridgeguard.onrender.com";
+const BACKEND_URL =
+  import.meta.env.VITE_BACKEND_URL || "http://127.0.0.1:5001";
 
 function App() {
   const [foods, setFoods] = useState([]);
