@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f8efff, #efe3ff, #e5d2ff);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 50px rgba(111, 66, 193, 0.18);
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #7b3fe4;
+}
+
+.subtitle {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #63577a;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stats {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, #f4e8ff, #efe1ff);
+  border: 1px solid #e1c8ff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(143, 92, 255, 0.08);
+}
+
+.stat-box h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #7b3fe4;
+}
+
+.stat-box p {
+  margin-top: 8px;
+  color: #5f5570;
+  font-weight: 600;
+}
+
+.upload-section {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.camera-btn,
+.analyze-btn {
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+.camera-btn {
+  background: #f5edff;
+  color: #7b3fe4;
+  border: 2px solid #d9b8ff;
+}
+
+.analyze-btn {
+  background: linear-gradient(135deg, #c16bff, #8f5cff);
+  color: white;
+  box-shadow: 0 12px 28px rgba(143, 92, 255, 0.25);
+}
+
+.analyze-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.status-text {
+  margin-top: 8px;
+  color: #6b4cc2;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.error-text {
+  margin-top: 8px;
+  color: #c63f7b;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.image-preview {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-preview img {
+  width: 100%;
+  max-width: 420px;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 4px solid #f0e2ff;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.results-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  text-align: left;
+}
+
+.results-box {
+  background: #fcf9ff;
+  border: 1px solid #ead9ff;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(143, 92, 255, 0.08);
+}
+
+.results-box h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #7b3fe4;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.results-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.food-item,
+.recipe-item {
+  background: white;
+  border: 1px solid #ead9ff;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  color: #4c4061;
+  box-shadow: 0 4px 10px rgba(143, 92, 255, 0.06);
+}
+
+.food-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.food-item p {
+  margin: 6px 0 0;
+  color: #6a5e80;
+}
+
+.recipe-item {
+  font-weight: 600;
+}
+
+.warning {
+  align-self: flex-start;
+  background: #ffe2f0;
+  color: #c63f7b;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 7px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.empty-text {
+  text-align: center;
+  color: #7a7190;
+  padding: 20px 0;
+}
+
+@media (min-width: 700px) {
+  .page {
+    padding: 28px;
+  }
+
+  .card {
+    padding: 32px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .upload-section {
+    align-items: center;
+  }
+
+  .camera-btn,
+  .analyze-btn {
+    max-width: 360px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .food-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
